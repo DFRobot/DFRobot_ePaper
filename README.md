@@ -8,7 +8,8 @@
 
 ## DFRobot_ePaper Library for Arduino
 
-Provide an Arduino libraries to control four e-ink screens, the library is a blend of two epaper four drive mode, including black and white epaper I2C driver and SPI driver, three color epaper I2C driver and SPI driver.
+It provides an Arduino library to control 4 types of e-link display screen.  
+The library compromises 4 drive modes of two epapers, including IIC drive, SPI drive of both Black & White epaper and Tricolor epaper.
 
 ## Table of Contents
 
@@ -23,7 +24,7 @@ Provide an Arduino libraries to control four e-ink screens, the library is a ble
 
 ## Summary
 
-The library is used to control black and white epaper and tricolor epaper screens to display graphics, images and text, and there are two modes of driving for users of different needs.
+The library is used to control Black & White epaper and Tricolor epaper screens to display graphics, images and text. And there are two drive modes to select.
 
 ## Methods
 
