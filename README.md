@@ -178,10 +178,10 @@ void fillCircle(int16_t x, int16_t y, int16_t r, uint16_t color);
  *
  * @param x0        The x-axis of the first point
  *        y0        The y-axis of the first point
- *        x0        The x-axis of the second point
- *        y0        The y-axis of the second point
- *        x0        The x-axis of the third point
- *        y0        The y-axis of the third point
+ *        x1        The x-axis of the second point
+ *        y1        The y-axis of the second point
+ *        x2        The x-axis of the third point
+ *        y2        The y-axis of the third point
  */
 void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, 
                   int16_t x2, int16_t y2, uint16_t color);
@@ -191,10 +191,10 @@ void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
  *
  * @param x0        The x-axis of the first point
  *        y0        The y-axis of the first point
- *        x0        The x-axis of the second point
- *        y0        The y-axis of the second point
- *        x0        The x-axis of the third point
- *        y0        The y-axis of the third point
+ *        x1        The x-axis of the second point
+ *        y1        The y-axis of the second point
+ *        x2        The x-axis of the third point
+ *        y2        The y-axis of the third point
  */
 void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, 
                   int16_t x2, int16_t y2, uint16_t color);
