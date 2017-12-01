@@ -6,7 +6,7 @@
 
 
 
-# DFRobot_ePaper Library for Arduino
+## DFRobot_ePaper Library for Arduino
 
 Provide an Arduino libraries to control four e-ink screens, the library is a blend of two epaper four drive mode, including black and white epaper I2C driver and SPI driver, three color epaper I2C driver and SPI driver.
 
@@ -66,7 +66,7 @@ void flush(uint8_t mode);
 /*!
  * @brief Image display -> tricolor epaper
  * @param pic_bw  Black and white part
- * @      pic_red  The red part
+ *        pic_red  The red part
  */
 void drawPicture(const unsigned char *pic_bw, const unsigned char *pic_red);
 
@@ -79,9 +79,9 @@ void drawPicture(const unsigned char *pic);
 /*!
  * @brief Display string
  * @param (x,y)  coordinate
- * @      size  The font size
- * @      *ch  The string to display
- * @      color  BLACK or WHITE or RED
+ *        size  The font size
+ *        *ch  The string to display
+ *        color  BLACK or WHITE or RED
  */
 void disString(uint8_t x, uint8_t y, uint8_t size, char *ch, uint8_t color);
 
@@ -223,6 +223,7 @@ void fillRoundRect(int16_t x, int16_t y, int16_t, width, int16_t height,
 ## Compatibility
 
 FireBeetle Covers-ePaper Display Module(SPI):
+
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 FireBeetle-ESP32  |      √       |             |            | 
@@ -232,6 +233,7 @@ Arduino uno |              |      √      |            |
 Arduino leonardo |              |      √      |            | 
 
 FireBeetle Covers-ePaper Display Module(I2C):
+
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 FireBeetle-ESP32  |      √       |             |            | 
