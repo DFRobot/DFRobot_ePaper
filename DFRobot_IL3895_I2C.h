@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include <SPI.h> 
 #include <String.h>
 #include <math.h>
 #include "DFRobot_ePaper.h"
@@ -8,7 +7,7 @@
 #ifndef __DFRobot_IL3895_I2C_H
 #define __DFRobot_IL3895_I2C_H
 
-//Instruction set
+/*! Instruction set */
 #define  DFR_IL3895_FLUSH                    1
 #define  DFR_IL3895_CLEAR                    2
 #define  DFR_IL3895_DRAWPICTURE              3
@@ -19,8 +18,8 @@
 #define  DFR_IL3895_DRAWCIRCLE               8
 #define  DFR_IL3895_DRAWFILLRECT             9
 #define  DFR_IL3895_STANDBY                 10
-#define  DFR_IL3895_DISSTRING_START         11
-#define  DFR_IL3895_DISSTRING_END           12
+#define  DFR_IL3895_DISSTRING_START         111
+#define  DFR_IL3895_DISSTRING_END           112
 #define  DFR_IL3895_DRAWVLINE               13
 #define  DFR_IL3895_DRAWHLINE               14
 //Address selection
@@ -38,18 +37,22 @@
 class DFRobot_IL3895_I2C : public DFRobot_ePaper
 {
 public:
-    DFRobot_IL3895_I2C(uint8_t ADDRESS);
+    DFRobot_IL3895_I2C();
     ~DFRobot_IL3895_I2C();
 
-    void        standby();
-
-    void        wakeUp();
-
+    /*! Set busy pins */
     void        begin(const char busy);
 
-    void        fillRect(int16_t x, int16_t y, int16_t width, int16_t height,
-                                            uint16_t color);
+    /*! Standby mode */
+    void        standby();
 
+    /*! Standby awaken */
+    void        wakeUp();
+
+    /*! Fill the rectangle */
+    void        fillRect(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color);
+
+    /*! Fill the circle */
     void        fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 
 

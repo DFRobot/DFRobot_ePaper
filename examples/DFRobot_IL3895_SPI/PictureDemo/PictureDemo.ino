@@ -1,21 +1,29 @@
 /*!
- *file DFRobot_IL0376F_PictureDemo.ino
+ *file PictureDemo.ino
  *
- *@n 下载这个程序后，ePaper将会显示出一张图片，这张图片包括红色和黑白两个部分，展示了ePaper显示三色图片的基础功能。
- *    用户也可以自定义图片，先在GitHub中下载图片取模软件，然后将图片的二进制数组拷贝到下面的数组中即可！
+ *@n Once the program downloaded, ePaper will display an image 
+ *that contains two parts:red and black-and-white. 
+ *It shows the infrastructure three-color image display of ePaper drawing. 
+ * User-defined is available. Please download image Mod (Modular) software 
+ * from GitHub and copy the relative binary array to array as below.  
  *
  * Copyright    [DFRobot](http://www.dfrobot.com), 2016
  * Copyright    GNU Lesser General Public License
  *
- * version  V0.3
- * date  2017-10-9
+ * version  V0.1
+ * date  2017-11-30
  */
 
 #include "Arduino.h"
-#include "DFRobot_IL3895_I2C.h"
-DFRobot_IL3895_I2C eink(A0);
+#include "DFRobot_IL3895_SPI.h"
+DFRobot_IL3895_SPI epaper;
 
-const unsigned char pic1[] = { /* 0X01,0X01,0XFA,0X00,0X7A,0X00, */
+#define EPAPER_CS  D3
+#define Font_CS  D6
+#define EPAPER_DC  D8
+#define BUSY     D7
+
+const unsigned char pic1[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
@@ -265,10 +273,9 @@ const unsigned char pic1[] = { /* 0X01,0X01,0XFA,0X00,0X7A,0X00, */
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
-0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
-};
+0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,};
 
-const unsigned char pic2[] = { /* 0X01,0X01,0XFA,0X00,0X7A,0X00, */
+const unsigned char pic2[] = {
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
@@ -518,34 +525,31 @@ const unsigned char pic2[] = { /* 0X01,0X01,0XFA,0X00,0X7A,0X00, */
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
-0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
-};
-
-#define BUSY     D5
+0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,};
 
 void setup(void)
 {
     Serial.begin(115200);
     //Select the corresponding pins
-    eink.begin(BUSY);
+    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, BUSY);
 
     //Clear the screen and display white
-    eink.fillScreen(WHITE);
+    epaper.fillScreen(WHITE);
     //Refresh screen display
-    eink.flush(FULL);
+    epaper.flush(FULL);
 }
 
 void loop(void)
 {
     //Display image 1
-    eink.drawPicture(pic1);
+    epaper.drawPicture(pic1);
     //Local refresh screen
-    eink.flush(PART);
+    epaper.flush(PART);
     delay(8000);
     
     //Display image 2
-    eink.drawPicture(pic2);
-    eink.flush(PART);
+    epaper.drawPicture(pic2);
+    epaper.flush(PART);
     delay(8000);
 }
 

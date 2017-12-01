@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <Wire.h>
 #include <SPI.h> 
 #include <String.h>
 #include <math.h>
