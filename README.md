@@ -32,6 +32,7 @@ The library is used to control black and white epaper and tricolor epaper screen
 
 /*!
  * @brief Select the corresponding pins -> tricolor epaper
+ *
  * @param cs_W21  Select spi cs pin
  *     D3: Piece of selected pin
  *     D4: Piece of selected pin
@@ -46,6 +47,7 @@ void begin(const char cs_W21, const char cs_GT30, const char dc, busy);
 
 /*!
  * @brief Select the corresponding pins -> black and white epaper
+ *
  * @param busy Select I2C busy pin
  */
 void begin(const char busy);
@@ -57,6 +59,7 @@ void flush(void);
 
 /*!
  * @brief Refresh screen -> black and white epaper
+ *
  * @param mode  The refresh mode
  *     PART: Local refresh
  *     FULL: Global refresh
@@ -65,6 +68,7 @@ void flush(uint8_t mode);
 
 /*!
  * @brief Image display -> tricolor epaper
+ *
  * @param pic_bw  Black and white part
  *        pic_red  The red part
  */
@@ -72,12 +76,14 @@ void drawPicture(const unsigned char *pic_bw, const unsigned char *pic_red);
 
 /*!
  * @brief Image display -> black and white epaper
+ *
  * @param pic  Black and white part
  */
 void drawPicture(const unsigned char *pic);
 
 /*!
  * @brief Display string
+ *
  * @param (x,y)  coordinate
  *        size  The font size
  *        *ch  The string to display
