@@ -38,7 +38,7 @@ void setup(void)
     epaper.flush(PART);
 
     //Displays a string, black font
-    epaper.disString(41,12,1,"DFRobot三色电子墨水屏",BLACK);
+    epaper.disString(41,12,1,"DFRobot黑白电子墨水屏",BLACK);
     //Refresh screen display
     epaper.flush(PART);
 
