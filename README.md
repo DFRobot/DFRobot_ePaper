@@ -17,6 +17,7 @@ The library compromises 4 drive modes of two epapers, including IIC drive, SPI d
 * [Methods](#methods)
 * [Compatibility](#Compatibility)
 * [Depends](#depends)
+* [Tool](#Tool)
 * [History](#history)
 * [Credits](#credits)
 <snippet>
@@ -243,9 +244,9 @@ FireBeetle Covers-ePaper Display Module(I2C):
 
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-FireBeetle-ESP32  |      √       |             |            | 
+FireBeetle-ESP32  |      √       |             |     Picture fetching       | 
 FireBeetle-ESP8266  |      √       |             |            | 
-FireBeetle-BLE4.1 |      √       |             |            | 
+FireBeetle-BLE4.1 |      √       |             | Select the "C" array           | 
 Arduino uno |      √       |             |            | 
 Arduino leonardo |      √       |             |            | 
  
@@ -254,6 +255,17 @@ Arduino leonardo |      √       |             |            |
 Projects           |                     URL                       | Remarks
 ------------------ | :-------------------------------------------: | -----------
 DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
+
+## Tool
+### Picture fetching software USES tutorials
+*①.Open the software，Open a picture“xx.bmp” <br>
+*②.Output data type：Select the "C" array（*.c） <br>
+*③.Scanning way：Select "vertical scan" <br>
+*④.Output gray scale：Select "monochrome" <br>
+*⑤.Maximum width and height：Select "212" and "104", and then click the arrow to confirm it <br>
+*⑥.Select "from right to left" <br> 
+*⑦.Click "save" and save the converted array to the extension ".c "file <br> 
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
 
 ## History
 

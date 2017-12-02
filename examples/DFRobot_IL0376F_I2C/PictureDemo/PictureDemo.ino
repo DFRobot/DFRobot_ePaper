@@ -1,12 +1,11 @@
 /*!
- *file PictureDemo.ino
+ * file PictureDemo.ino
  *
- *@n Once the program downloaded, ePaper will display an image 
- *that contains two parts:red and black-and-white. 
- *It shows the infrastructure three-color image display of ePaper drawing. 
- *User-defined is available. Please download image Mod (Modular) software from GitHub 
- *and copy the relative binary array to array as below.  
- *  
+ * @n Once the program downloaded, ePaper will display an image 
+ * that contains two parts:red and black-and-white. 
+ * It shows the infrastructure three-color image display of ePaper drawing. 
+ * User-defined is available. Please download image Mod (Modular) software 
+ * from GitHub and copy the relative binary array to array as below.  
  *
  * Copyright    [DFRobot](http://www.dfrobot.com), 2016
  * Copyright    GNU Lesser General Public License
@@ -16,15 +15,17 @@
  */
 
 #include "Arduino.h"
-#include "DFRobot_IL0376F_SPI.h"
-DFRobot_IL0376F_SPI epaper;
+#include "DFRobot_IL0376F_I2C.h"
 
-#define EPAPER_CS  D3
-#define Font_CS  D6
-#define EPAPER_DC  D8
-#define BUSY     D7
+DFRobot_IL0376F_I2C epaper;
 
-const unsigned char  picBW[] = {
+#ifdef __AVR__
+typedef const PROGMEM unsigned char type;
+#else
+typedef const unsigned char type;
+#endif
+
+type picBW[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XE0,0X00,0X00,0X01,0X80,0X00,0X00,0X00,0X00,
@@ -199,7 +200,7 @@ const unsigned char  picBW[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF};
 
-const unsigned char  picRED[] = {
+type picRED[] = {
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
@@ -374,11 +375,13 @@ const unsigned char  picRED[] = {
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00};
 
+#define BUSY     D4
+
 void setup(void)
 {
     Serial.begin(115200);
     //Select the corresponding pins
-    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, BUSY);
+    epaper.begin(BUSY);
 
     /*********Only show the black images********/
     //Clear the screen and display white
@@ -409,6 +412,5 @@ void setup(void)
 
 void loop(void)
 {
-    delay(3000);
+    delay(8000);
 }
-

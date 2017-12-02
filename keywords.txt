@@ -19,6 +19,7 @@ begin	KEYWORD2
 disString	KEYWORD2
 flush	KEYWORD2
 epaper	KEYWORD2
+drawPicture	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
@@ -28,3 +29,6 @@ LUCENCY	LITERAL1
 WHITE	LITERAL1
 RED	LITERAL1
 BLACK	LITERAL1
+
+PART	LITERAL1
+FULL	LITERAL1

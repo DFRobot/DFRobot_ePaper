@@ -1,11 +1,12 @@
 /*!
- *file PictureDemo.ino
+ * file PictureDemo.ino
  *
- *@n Once the program downloaded, ePaper will display an image 
- *that contains two parts:red and black-and-white. 
- *It shows the infrastructure three-color image display of ePaper drawing. 
- *User-defined is available. Please download image Mod (Modular) software 
- *from GitHub and copy the relative binary array to array as below.  
+ * @n Once the program downloaded, ePaper will display an image 
+ * that contains two parts:red and black-and-white. 
+ * It shows the infrastructure three-color image display of ePaper drawing. 
+ * User-defined is available. Please download image Mod (Modular) software from GitHub 
+ * and copy the relative binary array to array as below.  
+ *  
  *
  * Copyright    [DFRobot](http://www.dfrobot.com), 2016
  * Copyright    GNU Lesser General Public License
@@ -15,17 +16,15 @@
  */
 
 #include "Arduino.h"
-#include "DFRobot_IL0376F_I2C.h"
+#include "DFRobot_IL0376F_SPI.h"
+DFRobot_IL0376F_SPI epaper;
 
-DFRobot_IL0376F_I2C epaper;
+#define EPAPER_CS  D3
+#define Font_CS  D6
+#define EPAPER_DC  D8
+#define BUSY     D7
 
-#ifdef __AVR__
-typedef const PROGMEM unsigned char type;
-#else
-typedef const unsigned char type;
-#endif
-
-type picBW[] = {
+const unsigned char  picBW[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XE0,0X00,0X00,0X01,0X80,0X00,0X00,0X00,0X00,
@@ -200,7 +199,7 @@ type picBW[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,
 0XFF,0XFF,0XFF,0XFF};
 
-type picRED[] = {
+const unsigned char  picRED[] = {
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
@@ -375,13 +374,11 @@ type picRED[] = {
 0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
 0X00,0X00,0X00,0X00};
 
-#define BUSY     D4
-
 void setup(void)
 {
     Serial.begin(115200);
     //Select the corresponding pins
-    epaper.begin(BUSY);
+    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, BUSY);
 
     /*********Only show the black images********/
     //Clear the screen and display white
@@ -412,5 +409,6 @@ void setup(void)
 
 void loop(void)
 {
-    delay(8000);
+    delay(3000);
 }
+

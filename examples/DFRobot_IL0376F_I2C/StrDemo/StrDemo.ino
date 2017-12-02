@@ -1,10 +1,12 @@
 /*!
- *file StrDemo.ino
+ * file StrDemo.ino
  *
- *@n Once the program downloaded, ePaper will display two lines of strings that 
- *shows ePaper basic string display. Users just need to call function: 
- *disString and random strings display are available. String colors, 
- *size and coordinate are adjustable.
+ * @n The FireBeetle -ePaper Display Module has a built-in font chip that can display 
+ * both Chinese and English.
+ * Once the program downloaded, ePaper will display two lines of strings that 
+ * shows ePaper basic string display. Users just need to call function: 
+ * disString and random strings display are available. String colors, 
+ * size and coordinate are adjustable.
  *
  * Copyright    [DFRobot](http://www.dfrobot.com), 2016
  * Copyright    GNU Lesser General Public License

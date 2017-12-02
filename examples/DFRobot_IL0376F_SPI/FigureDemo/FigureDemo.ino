@@ -1,10 +1,10 @@
 /*!
- *file FigureDemo.ino
+ * file FigureDemo.ino
  *
- *@n Once the program downloaded, ePaper will display some figures 
- *such as dotted lines,oblique lines, rectangle, 
- *filling rectangle region, round, filling round range.
- *It shows infrastructure functions of ePaper drawing.
+ * @n Once the program downloaded, ePaper will display some 
+ * figures such as dotted lines,oblique lines, rectangle, 
+ * filling rectangle region, round, filling round range.
+ * It shows infrastructure functions of ePaper drawing.
  *
  * Copyright    [DFRobot](http://www.dfrobot.com), 2016
  * Copyright    GNU Lesser General Public License
@@ -14,22 +14,25 @@
  */
  
 #include "Arduino.h"
-#include "DFRobot_IL0376F_I2C.h"
-DFRobot_IL0376F_I2C epaper;
+#include "DFRobot_IL0376F_SPI.h"
 
-#define BUSY     D4
+DFRobot_IL0376F_SPI epaper;
+
+#define EPAPER_CS  D3
+#define Font_CS  D6
+#define EPAPER_DC  D8
+#define BUSY     D7
 
 void setup(void)
 {
     Serial.begin(115200);
     //Select the corresponding pins
-    epaper.begin(BUSY);
+    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, BUSY);
 
     //Clear the screen and display white
     epaper.fillScreen(WHITE);
-    //Displays a string, red font
-    epaper.disString(0,0,1,"I2C",BLACK);
-
+    //Displays a string, black font
+    epaper.disString(0,0, 1,"SPI",BLACK);
     //Let me draw a red dot
     for(uint8_t x=12,y=12; y<92; y+=2)
     {

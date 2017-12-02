@@ -1,9 +1,9 @@
 /*!
- *file PictureDemo.ino
+ * file PictureDemo.ino
  *
- *@n Once the program downloaded, ePaper will display an image 
- *that contains two parts:red and black-and-white. 
- *It shows the infrastructure three-color image display of ePaper drawing. 
+ * @n Once the program downloaded, ePaper will display an image 
+ * that contains two parts:red and black-and-white. 
+ * It shows the infrastructure three-color image display of ePaper drawing. 
  * User-defined is available. Please download image Mod (Modular) software 
  * from GitHub and copy the relative binary array to array as below.  
  *
