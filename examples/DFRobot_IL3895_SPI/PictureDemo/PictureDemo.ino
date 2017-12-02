@@ -21,7 +21,7 @@ DFRobot_IL3895_SPI epaper;
 #define EPAPER_CS  D3
 #define Font_CS  D6
 #define EPAPER_DC  D8
-#define BUSY     D7
+#define EPAPER_BUSY     D7
 
 const unsigned char pic1[] = {
 0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XC0,
@@ -531,7 +531,7 @@ void setup(void)
 {
     Serial.begin(115200);
     //Select the corresponding pins
-    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, BUSY);
+    epaper.begin(EPAPER_CS, Font_CS, EPAPER_DC, EPAPER_BUSY);
 
     //Clear the screen and display white
     epaper.fillScreen(WHITE);
