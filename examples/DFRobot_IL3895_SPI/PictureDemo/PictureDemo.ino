@@ -544,12 +544,12 @@ void loop(void)
     //Display image 1
     epaper.drawPicture(pic1);
     //Local refresh screen
-    epaper.flush(PART);
+    epaper.flush(FULL);
     delay(8000);
     
     //Display image 2
     epaper.drawPicture(pic2);
-    epaper.flush(PART);
+    epaper.flush(FULL);
     delay(8000);
 }
 
