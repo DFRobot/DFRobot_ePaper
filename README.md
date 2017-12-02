@@ -262,7 +262,7 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 * ②.Output data type：Select the "C" array（*.c）. <br>
 * ③.Scanning way：Select "vertical scan". <br>
 * ④.Output gray scale：Select "monochrome". <br>
-* ⑤.Maximum width and height: select "212 x 104" or "250 by 122" and then click the arrow to determine it.. <br>
+* ⑤.Maximum width and height: select "212 x 104" or "250 by 122" and then click the arrow to determine it. <br>
 * ⑥.Select "from right to left". <br> 
 * ⑦.Click "save" and save the converted array to the extension ".c "file. <br> 
 ![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
