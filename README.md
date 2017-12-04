@@ -1,10 +1,10 @@
 # FireBeetle Covers-ePaper Display Module(SPI)
 
-
+![SVG1](https://raw.githubusercontent.com/DFRobot/binaryfiles/master/DFR0511/DFR0511svg1.png)
 
 # FireBeetle Covers-ePaper Display Module(I2C)
 
-
+![SVG1](https://raw.githubusercontent.com/DFRobot/binaryfiles/master/DFR0511/DFR0511svg1.png)
 
 ## DFRobot_ePaper Library for Arduino
 
