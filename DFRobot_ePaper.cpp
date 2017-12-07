@@ -60,7 +60,7 @@ void DFRobot_ePaper::drawPicture(const unsigned char *pic_bw = NULL, const unsig
             if(i<106){
                 for(unsigned char j = 0; j < 26; j++){
                     if(pic_bw == NULL){
-                        Wire.write(0);
+                        Wire.write(0Xff);
                     }else{
                         Wire.write(~pgm_read_byte_near(pic_bw + 26*i+j));
                     }
@@ -68,7 +68,7 @@ void DFRobot_ePaper::drawPicture(const unsigned char *pic_bw = NULL, const unsig
             }else{
                 for(unsigned char j = 0; j < 26; j++){
                     if(pic_red == NULL){
-                        Wire.write(0);
+                        Wire.write(0Xff);
                     }else{
                         Wire.write(~pgm_read_byte_near(pic_red + 26*i+j-2756));
                     }
