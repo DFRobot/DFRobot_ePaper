@@ -15,9 +15,9 @@ The library compromises 4 drive modes of two epapers, including IIC drive, SPI d
 
 * [Summary](#summary)
 * [Methods](#methods)
-* [Compatibility](#Compatibility)
+* [Compatibility](#compatibility)
 * [Depends](#depends)
-* [Tool](#Tool)
+* [Tool](#tool)
 * [History](#history)
 * [Credits](#credits)
 <snippet>
