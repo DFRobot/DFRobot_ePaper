@@ -261,15 +261,15 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 * Note: You need an image conversion software. Download([lcd-image-converter](https://raw.githubusercontent.com/DFRobot/DFRobot_ePaper/master/tool/lcd-image-converter.zip))<br>
     The image size of black and white epaper is 250*122.<br>
     The image size of the tricolor epaper is 212*104.<br>
-* ①.Open a picture“xxx.jpg”. [File->Open] <br>
+* ①.Open a picture“xxx.jpg”. `File->Open` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/File-Open.png)
-* ②.Set the image to flip. [Image->Rotate->180] <br>
+* ②.Set the image to flip. `Image->Rotate->180` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Image-Rotate.png)
-* ③.Open the output parameter Settings menu. [Options->Conversion] <br>
+* ③.Open the output parameter Settings menu. `Options->Conversion` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Options-Conversion.png)
 * ④.Set the parameters as shown below. <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Parameter%20Settings.png)
-* ⑤.After setting the parameters, click "Show Preview". <br>
+* ⑤.After setting the parameters, click `Show Preview`. <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Show%20Preview.png)
 * ⑥.Copy the binary in the dialog box to the array in the demo. <br> 
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/C.png)
