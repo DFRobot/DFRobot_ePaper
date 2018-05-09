@@ -259,17 +259,17 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 ## Tool
 ### Picture fetching software USES tutorials
 * ``Note:`` You need an image conversion software. [Download](https://raw.githubusercontent.com/DFRobot/DFRobot_ePaper/master/tool/lcd-image-converter.zip)(lcd-image-converter)<br>
-    The image size of black and white epaper is 250*122.<br>
-    The image size of the tricolor epaper is 212*104.<br>
-* `1. Open a picture“xxx.jpg”.` `File->Open` <br>
+    The image size of black and white epaper is 250×122.<br>
+    The image size of the tricolor epaper is 212×104.<br>
+* `1. Open a picture“xxx.jpg”. File->Open` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/File-Open.png)
-* `2. Set the image to flip.` `Image->Rotate->180` <br>
+* `2. Set the image to flip. Image->Rotate->180` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Image-Rotate-180.png)
-* `3. Open the output parameter Settings menu.` `Options->Conversion` <br>
+* `3. Open the output parameter Settings menu. Options->Conversion` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Options-Conversion.png)
 * `4. Set the parameters as shown below.` <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Parameter%20Settings.png)
-* `5. After setting the parameters, click` `Show Preview`. <br>
+* `5. After setting the parameters, click Show Preview`. <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Show%20Preview.png)
 * `6. Copy the binary in the dialog box to the array in the demo.` <br> 
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/C.png)
