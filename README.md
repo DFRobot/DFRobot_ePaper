@@ -268,9 +268,9 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 * ③.Open the output parameter Settings menu. [Options->Conversion] <br>
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Options-Conversion.png)
 * ④.Set the parameters as shown below. <br>
-![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Parameter Settings.png)
+![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Parameter%20Settings.png)
 * ⑤.After setting the parameters, click "Show Preview". <br>
-![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Show Preview.png)
+![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/Show%20Preview.png)
 * ⑥.Copy the binary in the dialog box to the array in the demo. <br> 
 ![image](https://github.com/DFRobot/DFRobot_ePaper/blob/master/images/icon/C.png)
 * ⑦.Then, download the program to your development board and the image will appear on the screen. <br> 
