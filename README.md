@@ -258,7 +258,7 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 
 ## Tool
 ### Picture fetching software USES tutorials
-* Note: You need an image conversion software. Download(lcd-image-converter)
+* Note: You need an image conversion software. Download([lcd-image-converter](https://raw.githubusercontent.com/DFRobot/DFRobot_ePaper/master/tool/lcd-image-converter.zip))<br>
         The image size of black and white epaper is 250*122.<br>
         The image size of the tricolor epaper is 212*104.<br>
 * ①.Open a picture“xxx.jpg”. [File->Open] <br>
