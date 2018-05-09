@@ -258,14 +258,22 @@ DFRobot_Display        |  https://github.com/DFRobot/DFRobot_Display     | must
 
 ## Tool
 ### Picture fetching software USES tutorials
-* ①.Open the software，Open a picture“xx.bmp”. <br>
-* ②.Output data type：Select the "C" array（*.c）. <br>
-* ③.Scanning way：Select "vertical scan". <br>
-* ④.Output gray scale：Select "monochrome". <br>
-* ⑤.Maximum width and height: select "212 x 104" or "250 by 122" and then click the arrow to determine it. <br>
-* ⑥.Select "from right to left". <br> 
-* ⑦.Click "save" and save the converted array to the extension ".c "file. <br> 
+* Note: You need an image conversion software. Download(lcd-image-converter)
+        The image size of black and white epaper is 250*122.<br>
+        The image size of the tricolor epaper is 212*104.<br>
+* ①.Open a picture“xxx.jpg”. [File->Open] <br>
 ![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ②.Set the image to flip. [Image->Rotate->180] <br>
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ③.Open the output parameter Settings menu. [Options->Conversion] <br>
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ④.Set the parameters as shown below. <br>
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ⑤.After setting the parameters, click "Show Preview". <br>
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ⑥.Copy the binary in the dialog box to the array in the demo. <br> 
+![image](http://wiki.dfrobot.com.cn/images/0/09/BW.png)
+* ⑦.Then, download the program to your development board and the image will appear on the screen. <br> 
 
 ## History
 
